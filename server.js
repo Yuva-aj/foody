@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 // MongoDB Atlas connection string
-const url = 'mongodb+srv://yuva_aj:www.yuvi.com@cluster0.kpkb4fi.mongodb.net/foody?retryWrites=true&w=majority';
+const url = 'mongodb+srv://yuva_aj:yuva_aj@cluster0.kpkb4fi.mongodb.net/foody?retryWrites=true&w=majority';
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -32,7 +32,7 @@ async function startServer() {
     const foodRoutes = require('./routes/foodRoutes')(database, FoodModel);
     app.use('/foods', foodRoutes);
     
-    app.listen(port, () => {
+    app.listen(3000, () => {
       console.log(`Listening to port ${port}`);
     });
 
